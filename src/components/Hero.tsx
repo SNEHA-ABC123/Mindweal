@@ -122,8 +122,8 @@ const Hero = () => {
     {/* LEFT: Two Images Side by Side */}
     <div className="grid grid-cols-2 gap-4 w-full">
       <img 
-        src="/images/illus1.png" 
-        alt="Therapy Illustration 1" 
+       src={`${import.meta.env.BASE_URL}images/illus1.png`}
+        alt="Therapy Illustration 1"
         className="rounded-2xl shadow-md w-full h-auto object-cover"
       />
       <img 
