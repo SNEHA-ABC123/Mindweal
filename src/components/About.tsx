@@ -45,7 +45,7 @@ Learn more about our journey, mission, and the heart behind MindWeal.
       {/* Image */}
       <div className="relative z-10 flex justify-center">
         <img
-          src="/images/mwaboutus.png"
+          src={`${import.meta.env.BASE_URL}images/mwaboutus.png`}
           alt="MindWeal Therapy"
           className="object-contain w-full h-full max-h-[480px] rounded-3xl transition-transform duration-500 hover:scale-[1.03] brightness-105 contrast-110"
         />
@@ -64,7 +64,7 @@ Learn more about our journey, mission, and the heart behind MindWeal.
       {/* Background Logo */}
       <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
         <img
-          src="/images/logo.jpg"
+          src={`${import.meta.env.BASE_URL}images/logo.jpg`}
           alt="MindWeal Background Logo"
           className="w-[60%] md:w-[45%] opacity-5 object-contain"
         />
@@ -74,7 +74,7 @@ Learn more about our journey, mission, and the heart behind MindWeal.
       <div className="relative z-10 flex justify-center order-2 md:order-1">
         <div className="w-full max-w-[480px] h-[420px] rounded-3xl overflow-hidden shadow-xl bg-gray-50">
           <img
-            src="/images/pihusuri.png"
+            src={`${import.meta.env.BASE_URL}images/pihusuri.png`}
             alt="Pihu Suri"
             className="object-cover object-top w-full h-full rounded-3xl transition-transform duration-500 hover:scale-[1.03] brightness-105 contrast-110"
           />

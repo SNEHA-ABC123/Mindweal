@@ -127,7 +127,7 @@ const Hero = () => {
         className="rounded-2xl shadow-md w-full h-auto object-cover"
       />
       <img 
-        src="/images/illus2.png" 
+        src={`${import.meta.env.BASE_URL}images/illus2.png`}
         alt="Therapy Illustration 2" 
         className="rounded-2xl shadow-md w-full h-auto object-cover"
       />
@@ -136,7 +136,7 @@ const Hero = () => {
     {/* RIGHT: Logo + Buttons */}
     <div className="flex flex-col items-center text-center">
       <img 
-        src="/images/logo.jpg" 
+        src={`${import.meta.env.BASE_URL}images/logo.jpg`} 
         alt="MindWeal Logo" 
         className="w-24 sm:w-32 mb-4 object-contain"
       />
