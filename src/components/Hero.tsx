@@ -129,7 +129,7 @@ const Hero = () => {
       <img 
         src={`${import.meta.env.BASE_URL}images/illus2.png`}
         alt="Therapy Illustration 2" 
-        className="rounded-2xl shadow-md w-full h-auto object-cover"
+        className="block w-full h-auto max-h-[400px] object-cover rounded-2xl shadow-md"
       />
     </div>
 
