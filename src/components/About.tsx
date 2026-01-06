@@ -20,7 +20,7 @@ Learn more about our journey, mission, and the heart behind MindWeal.
       {/* Background Logo */}
       <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
         <img
-          src="/images/logo.jpg"
+          src={`${import.meta.env.BASE_URL}images/logo.jpg`}
           alt="MindWeal Background Logo"
           className="w-[60%] md:w-[45%] opacity-5 object-contain"
         />
