@@ -30,7 +30,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => scrollToSection('hero')}>
             <div className="bg-gradient-to-br from-mint-500 to-sage-600 p-2 rounded-xl">
-              <img src="\images\logo.jpg" width="50" height="40" />
+              <img src={`${import.meta.env.BASE_URL}images/logo.jpg`} width="50" height="40" />
             </div>
             <div>
               <h1 className="text-2xl font-bold text-gray-900">MindWeal</h1>
