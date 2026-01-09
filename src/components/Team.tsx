@@ -14,7 +14,7 @@ const teamMembers: TeamMember[] = [
   {
     name: "Ms. PIHU SURI",
     role: "Founder & Lead Psychologist at MindWeal by Pihu Suri",
-    image: "/assets/pihusuri.png",
+    image: "pihusuri.png",
     bio: "Pihu Suri is a licensed psychologist and founder of MindWeal. She specializes in cognitive-behavioral therapy and holistic wellbeing. With years of experience, she focuses on helping clients achieve emotional resilience and personal growth.",
     contact: "mailto:contact@mindweal.com",
   },
@@ -68,8 +68,20 @@ const Team = () => {
               {/* Profile Picture */}
               <div className="w-36 h-36 rounded-full border-4 border-green-800 shadow-md overflow-hidden -mt-20 bg-white">
                 <img
-                  src={member.image}
-                  alt={member.name}
+                  src={`${import.meta.env.BASE_URL}images/pihusuri.png`}
+                  alt="Pihu Suri"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <img
+                  src={`${import.meta.env.BASE_URL}images/shivangisobti.png`}
+                  alt="Pihu Suri"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <img
+                  src={`${import.meta.env.BASE_URL}images/avnikohli.png`}
+                  alt="Pihu Suri"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
