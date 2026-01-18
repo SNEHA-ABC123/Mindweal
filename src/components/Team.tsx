@@ -4,43 +4,50 @@ interface TeamMember {
   name: string;
   role: string;
   image: string;
-  bio: string;
+  bio: React.ReactNode;
   contact: string;
   bookingLink: string;
+  experience: string;   // NEW
 }
 
 const teamMembers: TeamMember[] = [
   {
     name: "Ms. PIHU SURI",
-    role: "Founder & Lead Psychologist at MindWeal by Pihu Suri",
+    role: "Founder & Lead Psychologist",
     image: "pihusuri.png",
-    bio: "Pihu Suri is the Founder and Lead Psychologist of MindWeal, providing individual therapy, couples therapy, group counseling and therapy, and career guidance and orientation. She is also actively involved in psychology training and learning programs, mental health workshops, webinars, and guest lectures, with a strong focus on holistic and client-centered care.",
+    bio:( 
+    <>Pihu Suri is the Founder and Lead Psychologist of MindWeal, providing <strong> individual therapy, couples therapy, group counseling and therapy, and career guidance and orientation</strong>. She is also actively involved in <strong> psychology training and learning programs, mental health workshops, webinars, and guest lectures,</strong> with a strong focus on holistic and client-centered care.
+    </>),
     contact: "mailto:mindweal.ps@gmail.com",
-    bookingLink: "https://qr.me-qr.com/jjzG59MG"
+    bookingLink: "https://docs.google.com/forms/d/e/1FAIpQLSdPuuuAuPsEOVM-EnVYkIABhmaqUX17k79wMRrwCK7LjQcHYg/viewform",
+    experience: "B.A. Clinical Psychology, M.Sc.Clinical Psychology "
   },
   {
     name: "Ms. SHIVANGI SOBTI",
-    role: "Counseling Psychologist at MindWeal by Pihu Suri",
+    role: "Counseling Psychologist",
     image: "shivangisobti.png",
-    bio: "Shivangi Sobti is a Counseling Psychologist who provides individual therapy sessions, group counseling, and career guidance and orientation. She also works with couples through couples counselling and offers additional support services tailored to clients’ emotional, personal, and professional needs.",
+    bio: ( <>Shivangi Sobti is a Counseling Psychologist who provides <strong> individual therapy sessions, group counseling, and career guidance and orientation.</strong> She also works with couples through <strong> couples counselling </strong> and offers additional support services tailored to <strong>clients’ emotional, personal, and professional needs.</strong></>),
     contact: "mailto:shivangisobti.mindwealbyps@gmail.com",
-    bookingLink: "https://forms.gle/io54ZEG1tTWcSPjq5"
+    bookingLink: "https://forms.gle/io54ZEG1tTWcSPjq5",
+    experience: "B.A. Clinical Psychology, M.A. Clinical Psychology"
   },
   {
     name: "Ms. AVNI KOHLI",
-    role: "JR. Counselling Psychologist at MindWeal by Pihu Suri",
+    role: "JR. Counselling Psychologist",
     image: "avnikohli.png",
-    bio: "Avni Kohli is a Counseling Psychologist who provides individual therapy sessions focused on stress management, self-esteem and confidence building, daily life management, and support through major life transitions. She also works on interpersonal dynamics, boundaries setting, and problem solving, using a compassionate and client-centered approach.",
+    bio: ( <> Avni Kohli is a Counseling Psychologist who provides <strong>individual therapy sessions focused on stress management, self-esteem and confidence building, daily life management, and support through major life transitions.</strong> </>),
     contact: "mailto:avni.nindwealbyps@gmail.com",
-    bookingLink: "https://forms.gle/xYrdZvsQjyY7NzLR8"
+    bookingLink: "https://forms.gle/xYrdZvsQjyY7NzLR8",
+    experience: "B.A. Applied Psychology, M.A. Psychology "
   },
   {
     name: "Dr. SHOBHA SHARMA",
-    role: "Clinical Consultant at MindWeal",
+    role: "Clinical Consultant",
     image: "ShobhaSharma.png",
-    bio: "Dr. Shobha Sharma is a Clinical Consultant and Academic Counsellor with extensive experience in child and adolescent psychology, psychometric assessments, and neurodevelopmental disorder.",
+    bio: ( <> Dr. Shobha Sharma is a Clinical Consultant and Academic Counsellor with extensive experience in <strong> child and adolescent psychology, psychometric assessments, and neurodevelopmental disorder.</strong> </>),
     contact: "mailto:shubhi.sharma869@gmail.com",
-    bookingLink: "https://forms.gle/VXT7DSc3o3QiTApq6"
+    bookingLink: "https://forms.gle/VXT7DSc3o3QiTApq6",
+    experience: "B.A. Psychology, M.A. Psychology, M.Phil "
   },
 ];
 
@@ -75,24 +82,33 @@ const Team = () => {
             >
               <div className="w-36 h-36 rounded-full border-4 border-green-800 shadow-md overflow-hidden -mt-20 bg-white">
                 <img
-                  src={`${import.meta.env.BASE_URL}images/${member.image}`}
-                  alt={member.name}
-                  className={`w-full object-cover ${
-                    member.name === "Ms. PIHU SURI"
-                    ? "h-half "
-                    : "h-full"
-                  }`}
-                  loading="lazy"
-                />
+                    src={`${import.meta.env.BASE_URL}images/${member.image}`}
+                    alt={member.name}
+                    className={`w-full object-cover ${
+                      member.name === "Ms. PIHU SURI"
+                        ? "h-half "
+                        : "h-full"
+                    }`}
+                    loading="lazy"
+                  />
               </div>
 
               <div className="text-center mt-6 px-4 pb-4">
                 <h3 className="text-lg font-bold text-gray-900">{member.name}</h3>
-                <p className="mt-2 text-sm text-gray-700 italic">{member.role}</p>
+                <p className="mt-2 text-base text-gray-00 font-medium ">{member.role}</p>
 
+                {/* Long horizontal line */}
+                <hr className="w-full border-green-800 my-4" />
+
+                {/* Experience / Study */}
+                <p className="text-sm text-gray-700 font-small mb-4">
+                  {member.experience}
+                </p>
+
+                {/* Keep Know More */}
                 <button
                   onClick={() => openModal(member)}
-                  className="mt-5 bg-green-700 hover:bg-green-800 text-white py-2 px-6 rounded-full text-sm font-medium"
+                  className="mt-2 bg-green-700 hover:bg-green-800 text-white py-2 px-6 rounded-full text-sm font-medium"
                 >
                   Know More
                 </button>
@@ -102,6 +118,7 @@ const Team = () => {
         </div>
       </div>
 
+      {/* Modal – unchanged */}
       {selectedMember && (
         <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
           <div className="bg-white rounded-2xl max-w-md w-full p-6 relative shadow-lg">
@@ -146,9 +163,7 @@ const Team = () => {
               >
                 Book an Appointment
               </a>
-              
             </div>
-
           </div>
         </div>
       )}
