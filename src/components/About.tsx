@@ -1,117 +1,195 @@
 // @ts-ignore
-import { Heart } from "lucide-react";
+import { motion } from "framer-motion";
+import { Heart, Quote } from "lucide-react";
 
 const About = () => {
-return (
-<section id="about" className="relative bg-gradient-to-b from-[#f9f9ff] via-white to-[#f9f9ff] overflow-hidden py-28" >
-<div className="relative max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 space-y-28">
-{/* MAIN HEADING */}
-<div className="text-center space-y-4">
-<h1 className="text-5xl md:text-6xl font-bold text-gray-900">
-About Us
-</h1>
-<p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
-Learn more about our journey, mission, and the heart behind MindWeal.
-</p>
-</div>
+  return (
+    <section
+      id="about"
+      className="relative overflow-hidden bg-gradient-to-b from-[#f5f6ff] via-white to-[#f5f6ff] py-32"
+    >
+      {/* Ambient background glow */}
+      <div className="absolute -top-40 -left-40 w-[520px] h-[520px] bg-indigo-300/20 rounded-full blur-[140px]" />
+      <div className="absolute bottom-0 -right-40 w-[520px] h-[520px] bg-purple-300/20 rounded-full blur-[140px]" />
 
-    {/* OUR STORY SECTION */}
-    <div className="relative grid md:grid-cols-2 gap-16 items-center rounded-3xl bg-white shadow-md py-14 px-10 overflow-hidden hover:shadow-2xl transition-all duration-500">
-      {/* Background Logo */}
-      <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
-        <img
-          src={`${import.meta.env.BASE_URL}images/logo.jpg`}
-          alt="MindWeal Background Logo"
-          className="w-[60%] md:w-[45%] opacity-5 object-contain"
-        />
-      </div>
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-12 space-y-32">
 
-      {/* Text */}
-      <div className="relative z-10">
-        <h4 className="text-xl font-semibold text-lavender-700 uppercase mb-3 tracking-wide">
-          Our Story
-        </h4>
-        <p className="text-gray-700 text-[1.125rem] md:text-[1.2rem] leading-relaxed md:leading-[2rem]">
-          <strong>MindWeal by Pihu Suri</strong> was founded with a vision to
-          create a world where mental well-being is a priority, not an
-          afterthought. In today’s fast-paced world, individuals often
-          struggle to navigate their emotions and inner challenges.
-          MindWeal was born out of a deep commitment to guiding people
-          toward resilience, healing, and self-discovery through empathy and
-          psychological growth.
-        </p>
-      </div>
+        {/* ================= PAGE INTRO ================= */}
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          className="text-center max-w-4xl mx-auto space-y-6"
+        >
+          <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900">
+            About MindWeal
+          </h1>
 
-      {/* Image */}
-      <div className="relative z-10 flex justify-center">
-        <img
-          src={`${import.meta.env.BASE_URL}images/mwaboutus.png`}
-          alt="MindWeal Therapy"
-          className="object-contain w-full h-full max-h-[480px] rounded-3xl transition-transform duration-500 hover:scale-[1.03] brightness-105 contrast-110"
-        />
-      </div>
-    </div>
+          <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
+            Where clinical psychology meets compassion, clarity, and care —
+            without judgment.
+          </p>
+        </motion.div>
 
-    {/* FOUNDER SECTION HEADING */}
-    <div className="text-center space-y-4">
-      <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-        Message from the Founder
-      </h2>
-    </div>
+        {/* ================= OUR STORY ================= */}
+        <div className="relative grid lg:grid-cols-[1.1fr_0.9fr] gap-20 items-center rounded-[32px] bg-white/80 backdrop-blur-xl border border-gray-200 px-14 py-24 shadow-sm">
 
-    {/* MESSAGE FROM FOUNDER SECTION */}
-    <div className="relative grid md:grid-cols-2 gap-16 items-center rounded-3xl bg-white shadow-md py-14 px-10 overflow-hidden hover:shadow-2xl transition-all duration-500">
-      {/* Background Logo */}
-      <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
-        <img
-          src={`${import.meta.env.BASE_URL}images/logo.jpg`}
-          alt="MindWeal Background Logo"
-          className="w-[60%] md:w-[45%] opacity-5 object-contain"
-        />
-      </div>
+          {/* TEXT */}
+          <motion.div
+            initial={{ opacity: 0, y: 70 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9 }}
+            className="relative pl-12"
+          >
+            {/* Accent bar */}
+            <span className="absolute left-0 top-4 h-28 w-[5px] rounded-full bg-gradient-to-b from-indigo-500 to-purple-500" />
 
-      {/* Founder Image */}
-      <div className="relative z-10 flex justify-center order-2 md:order-1">
-        <div className="w-full max-w-[480px] h-[420px] rounded-3xl overflow-hidden shadow-xl bg-gray-50">
-          <img
-            src={`${import.meta.env.BASE_URL}images/pihusuri.png`}
-            alt="Pihu Suri"
-            className="object-cover object-top w-full h-full rounded-3xl transition-transform duration-500 hover:scale-[1.03] brightness-105 contrast-110"
-          />
+            {/* Our Story — BIG & BOLD */}
+            <motion.h2
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6"
+            >
+              Our Story
+            </motion.h2>
+
+            {/* Subtitle */}
+            <motion.h3
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-2xl font-semibold text-indigo-700 mb-10"
+            >
+              Healing begins when you feel truly heard.
+            </motion.h3>
+
+            <div className="space-y-7 text-[1.15rem] leading-[2.15rem] text-gray-700">
+              <p>
+                <span className="font-semibold text-gray-900">
+                  MindWeal by Pihu Suri
+                </span>{" "}
+                was founded with a core belief — mental well-being deserves the
+                same seriousness, dignity, and care as physical health.
+              </p>
+
+              <p>
+                In an increasingly fast-paced world, many people feel unseen,
+                emotionally overwhelmed, and misunderstood. MindWeal exists as
+                a deliberate pause — a safe space for reflection, resilience,
+                and meaningful inner change.
+              </p>
+
+              <p>
+                Our approach blends clinical expertise with deep empathy,
+                honoring the truth that healing is not linear — it is personal,
+                layered, and human.
+              </p>
+            </div>
+
+            <div className="mt-12 flex items-center gap-4">
+              <span className="h-px w-14 bg-indigo-400" />
+              <span className="text-xs uppercase tracking-[0.35em] text-gray-400">
+                Untangle · Heal · Thrive
+              </span>
+            </div>
+          </motion.div>
+
+          {/* IMAGE */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9 }}
+            className="relative flex justify-center"
+          >
+            <div className="rounded-[28px] p-[2px] bg-gradient-to-br from-indigo-400 via-purple-400 to-pink-400">
+              <div className="rounded-[26px] bg-[#0e1220] p-6">
+                <img
+                  src={`${import.meta.env.BASE_URL}images/ourstory.jpg`}
+                  alt="MindWeal Therapy"
+                  className="rounded-2xl max-w-md w-full object-cover"
+                />
+              </div>
+            </div>
+          </motion.div>
         </div>
+
+        {/* ================= FOUNDER MESSAGE ================= */}
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.9 }}
+          className="relative grid md:grid-cols-2 gap-20 items-center rounded-[36px] bg-white border border-gray-200 px-14 py-20 shadow-lg"
+        >
+          {/* Background watermark */}
+          <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
+            <img
+              src={`${import.meta.env.BASE_URL}images/logo.jpg`}
+              alt="MindWeal watermark"
+              className="w-[55%] opacity-[0.035]"
+            />
+          </div>
+
+          {/* Founder Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative z-10 flex justify-center"
+          >
+            <div className="w-full max-w-[460px] h-[440px] rounded-3xl overflow-hidden shadow-xl">
+              <img
+                src={`${import.meta.env.BASE_URL}images/pihusuri.png`}
+                alt="Pihu Suri"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+          </motion.div>
+
+          {/* Founder Text */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9 }}
+            className="relative z-10"
+          >
+            <Quote className="w-10 h-10 text-indigo-400 mb-6" />
+
+            <p className="text-[1.2rem] leading-[2.2rem] text-gray-700 italic mb-8">
+              “Mental well-being is not just about overcoming struggles — it is
+              about building a life where you feel grounded, confident, and
+              emotionally safe. At <strong>MindWeal</strong>, we walk alongside
+              you with compassion, clinical clarity, and respect.”
+            </p>
+
+            <p className="text-lg font-semibold text-indigo-700 mb-6">
+              — Pihu Suri <br />
+              <span className="text-sm text-gray-500 font-normal">
+                Founder & Lead Clinical Psychologist
+              </span>
+            </p>
+
+            <div className="flex items-center gap-3 text-gray-600">
+              <Heart className="w-6 h-6 text-pink-500" />
+              <span className="text-base">
+                Evidence-based, ethical & deeply human care
+              </span>
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
 
-      {/* Founder Message */}
-      <div className="relative z-10 order-1 md:order-2">
-        <p className="italic text-gray-700 text-[1.125rem] md:text-[1.2rem] leading-relaxed md:leading-[2rem] mb-6">
-          “Mental well-being is not just about overcoming struggles — it’s
-          about creating a life where you truly thrive. At{" "}
-          <strong>MindWeal</strong>, we provide a safe, inclusive, and
-          nurturing space for individuals to explore emotions without
-          judgment. Our goal is to help you untangle the mind, heal from
-          within, and embrace clarity and confidence.”
-        </p>
-
-        <p className="text-lg font-semibold text-lavender-700 mb-4">
-          — Pihu Suri, Founder & Lead Psychologist
-        </p>
-
-        <div className="mt-6 flex items-center space-x-3 text-gray-600">
-          <Heart className="h-6 w-6 text-mint-500" />
-          <span className="text-base md:text-lg">
-            Dedicated to transforming lives through empathy and healing
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  {/* Decorative Gradient Divider */}
-  <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-mint-100/60 to-transparent"></div>
-</section>
-
-
-);
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-indigo-100/60 to-transparent" />
+    </section>
+  );
 };
 
 export default About;
