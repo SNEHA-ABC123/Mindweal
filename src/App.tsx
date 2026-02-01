@@ -40,9 +40,9 @@ import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Services from "./components/Services";
 import About from "./components/About";
-import Team from "./components/Team";
+import Team from './components/Team';   
+import Services from "./components/Services";
 import Testimonials from "./components/Testimonials";
 import FAQ from "./components/FAQ";
 import News from "./components/News";
@@ -57,11 +57,12 @@ function HomePage() {
       <Header />
       <main>
         <Hero />
-        <Services />
         <About />
+        <Team />
+        <Services />
         <Testimonials />
+        <FAQ />
         <News />
-        <Team/>
         <FAQ />
         <Career />
         <Support />
