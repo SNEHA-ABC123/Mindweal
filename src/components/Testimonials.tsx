@@ -4,51 +4,39 @@ import { Star, Quote, Heart, User } from 'lucide-react';
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Sarah M.",
-      role: "Working Professional",
       rating: 5,
-      text: "Pihu created such a safe and welcoming space for me to explore my anxiety. Her approach is both professional and deeply caring. I've made incredible progress in just a few months.",
-      image: "https://images.pexels.com/photos/3796217/pexels-photo-3796217.jpeg?auto=compress&cs=tinysrgb&w=150",
+      text: "Therapy helped me manage my anxiety and feel emotionally safe again. I felt heard, understood, and supported without judgment. The space created during sessions made healing feel possible.",
+      service:"Individual Therapy",
       color: "mint"
     },
     {
-      name: "Michael & Lisa K.",
-      role: "Couple",
       rating: 5,
-      text: "Our relationship was struggling, but Pihu's couples therapy sessions gave us the tools to communicate better and reconnect. We're stronger than ever now.",
-      image: "https://images.pexels.com/photos/3775087/pexels-photo-3775087.jpeg?auto=compress&cs=tinysrgb&w=150",
+      text: "During one of the darkest phases of my life, therapy gave me compassion, patience, and genuine understanding. It helped me reconnect with myself and believe in healing again.",
+      service:"Trauma-Informed Therapy",
       color: "lavender"
     },
     {
-      name: "Rajesh T.",
-      role: "Career Transition",
       rating: 5,
-      text: "The career counseling sessions were exactly what I needed during my professional transition. Pihu helped me identify my strengths and navigate workplace challenges with confidence.",
-      image: "https://images.pexels.com/photos/3777931/pexels-photo-3777931.jpeg?auto=compress&cs=tinysrgb&w=150",
+      text: "These sessions helped me cope with intense emotions and long-standing mental health struggles. I’ve grown stronger, calmer, and more accepting of myself with time and guidance.",
+      service:"Psychotherapy",
       color: "sage"
     },
     {
-      name: "Priya S.",
-      role: "Student",
       rating: 5,
-      text: "The group therapy sessions introduced me to amazing people who understood my struggles. It's wonderful to know I'm not alone in my journey.",
-      image: "https://images.pexels.com/photos/3796760/pexels-photo-3796760.jpeg?auto=compress&cs=tinysrgb&w=150",
+      text: "I felt accepted exactly as I am. Therapy helped me process my emotions without fear or judgment, and supported me in becoming more confident and grounded in myself.",
+      service:"Queer-Affirmative Therapy",
       color: "mint"
     },
     {
-      name: "David L.",
-      role: "Trauma Recovery",
       rating: 5,
-      text: "Pihu's trauma-informed approach made all the difference. She helped me process difficult experiences at my own pace, always ensuring I felt safe and supported.",
-      image: "https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=150",
+      text: "Career counseling helped me gain clarity and confidence during a confusing phase. The guidance was practical, encouraging, and helped me understand my strengths better.",
+      service:"Career Counseling & Guidance",
       color: "lavender"
     },
     {
-      name: "Anita R.",
-      role: "Personal Growth",
       rating: 5,
-      text: "I came to therapy feeling lost and overwhelmed. Through our sessions, I've discovered my inner strength and learned valuable coping strategies that I use daily.",
-      image: "https://images.pexels.com/photos/3796280/pexels-photo-3796280.jpeg?auto=compress&cs=tinysrgb&w=150",
+      text: "During an overwhelming period, the immediate emotional support made a real difference. I felt calmer, supported, and less alone when I needed help the most.",
+      service:"Psychological First Aid",
       color: "sage"
     }
   ];
@@ -154,18 +142,14 @@ const Testimonials = () => {
                 {/* Client Info */}
                 <div className="flex items-center">
                   <div className="relative">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-12 h-12 rounded-full object-cover border-2 border-white shadow-md"
-                    />
+                    
                     <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-white rounded-full flex items-center justify-center">
                       <Heart className="h-2 w-2 text-red-500 fill-current" />
                     </div>
                   </div>
                   <div className="ml-4">
                     <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                    <div className="text-sm text-gray-600">{testimonial.role}</div>
+                    <div className="text-sm text-gray-600">{testimonial.service}</div>
                   </div>
                 </div>
               </div>

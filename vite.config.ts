@@ -1,11 +1,25 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   base: '/Mindweal/',
+
   optimizeDeps: {
-    exclude: ['lucide-react'],
+    esbuildOptions: {
+      sourcemap: false
+    }
   },
-});
+
+  esbuild: {
+    sourcemap: false
+  },
+
+  build: {
+    sourcemap: false
+  },
+
+  server: {
+    sourcemapIgnoreList: () => true
+  }
+})
